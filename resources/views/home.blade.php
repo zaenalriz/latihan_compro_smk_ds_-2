@@ -29,7 +29,6 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
             <div class="next-arrow flex-center">
                 <i class="ph-bold ph-caret-right text-white"></i>
@@ -39,25 +38,25 @@
             <div class="container">
                 <div class="heading3 text-center">Layanan Kami</div>
                 <div class="list-service row mt-40 row-gap-32">
-                  @foreach ($services as $item)
-                    <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                        <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px">
-                            <a class="service-item-main flex-column gap-16" href="service-cryptocurrency-trading.html">
-                                <div class="heading flex-between">
-                                    <div class="number heading3 text-placehover"></div>
-                                </div>
-                                <div class="desc">
-                                    <div class="heading7 hover-text-blue">
-                                      {{$item->title}}
+                    @foreach ($services as $item)
+                        <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px">
+                                <a class="service-item-main flex-column gap-16" href="service-cryptocurrency-trading.html">
+                                    <div class="heading flex-between">
+                                        <div class="number heading3 text-placehover"></div>
                                     </div>
-                                    <div class="body3 text-secondary mt-4">
-                                       {{$item->description}}
+                                    <div class="desc">
+                                        <div class="heading7 hover-text-blue">
+                                            {{ $item->title }}
+                                        </div>
+                                        <div class="body3 text-secondary mt-4">
+                                            {{ $item->description }}
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                  @endforeach
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -91,8 +90,7 @@
                                     href="contact-two.html">Get started</a><a
                                     class="button-share box-shadow hover-button-black text-on-surface bg-white text-button pt-12 pb-12 pl-36 pr-36 bora-48 flex-item-center gap-8"
                                     href="contact-two.html"><i class="ph ph-phone fs-20"></i><span>(00) 123 456
-                                        789</span></a><img src="assets/images/component/gateway1-dot.png"
-                                    alt="" />
+                                        789</span></a><img src="assets/images/component/gateway1-dot.png" alt="" />
                             </div>
                         </div>
                     </div>
@@ -103,104 +101,34 @@
             <div class="container">
                 <div class="heading3 text-center">Latest News</div>
                 <div class="row row-gap-32 mt-40">
-                    <div class="blog-item col-12 col-xl-4 col-sm-6" data-name="">
-                        <a class="blog-item-main" href="blog-detail-two.html">
-                            <div class="bg-img w-100 overflow-hidden mb-minus-1">
-                                <img class="w-100 h-100 display-block" src="assets/images/blog/408x270.png"
-                                    alt="CI Financial sells RIA stake in new expansion strategy" />
-                            </div>
-                            <div class="infor bg-white p-24">
-                                <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
-                                    Makerting
+                    @foreach ($blogs as $item)
+                        <div class="blog-item col-12 col-xl-4 col-sm-6" data-name="">
+                            <a class="blog-item-main" href="blog-detail-two.html">
+                                <div class="bg-img w-100 overflow-hidden mb-minus-1">
+                                    <img class="w-100 h-100 display-block" src="{{ $item->file }}"
+                                        alt="CI Financial sells RIA stake in new expansion strategy" />
                                 </div>
-                                <div class="heading6 mt-8">
-                                    CI Financial sells RIA stake in new expansion strategy
-                                </div>
-                                <div class="date flex-item-center gap-16 mt-8">
-                                    <div class="author caption2 text-secondary">
-                                        by <span class="text-on-surface">Avitex</span>
+                                <div class="infor bg-white p-24">
+                                    <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
+                                        Makerting
                                     </div>
-                                    <div class="item-date flex-item-center">
-                                        <i class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">1 days
-                                            ago</span>
+                                    <div class="heading6 mt-8">
+                                        {{ $item->title }}
                                     </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="blog-item col-12 col-xl-4 col-sm-6" data-name="">
-                        <a class="blog-item-main" href="blog-detail-two.html">
-                            <div class="bg-img w-100 overflow-hidden mb-minus-1">
-                                <img class="w-100 h-100 display-block" src="assets/images/blog/408x270.png"
-                                    alt="Barred financial advisors charged in $72 million criminal" />
-                            </div>
-                            <div class="infor bg-white p-24">
-                                <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
-                                    Development
-                                </div>
-                                <div class="heading6 mt-8">
-                                    Barred financial advisors charged in $72 million criminal
-                                </div>
-                                <div class="date flex-item-center gap-16 mt-8">
-                                    <div class="author caption2 text-secondary">
-                                        by <span class="text-on-surface">Avitex</span>
-                                    </div>
-                                    <div class="item-date flex-item-center">
-                                        <i class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">2 days
-                                            ago</span>
+                                    <div class="date flex-item-center gap-16 mt-8">
+                                        <div class="author caption2 text-secondary">
+                                            by <span class="text-on-surface">Avitex</span>
+                                        </div>
+                                        <div class="item-date flex-item-center">
+                                            <i class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">1 days
+                                                ago</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="blog-item col-12 col-xl-4 col-sm-6" data-name="">
-                        <a class="blog-item-main" href="blog-detail-two.html">
-                            <div class="bg-img w-100 overflow-hidden mb-minus-1">
-                                <img class="w-100 h-100 display-block" src="assets/images/blog/408x270.png"
-                                    alt="Retirement Planning Strategies" />
-                            </div>
-                            <div class="infor bg-white p-24">
-                                <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
-                                    Design
-                                </div>
-                                <div class="heading6 mt-8">
-                                    Retirement Planning Strategies
-                                </div>
-                                <div class="date flex-item-center gap-16 mt-8">
-                                    <div class="author caption2 text-secondary">
-                                        by <span class="text-on-surface">Avitex</span>
-                                    </div>
-                                    <div class="item-date flex-item-center">
-                                        <i class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">2 days
-                                            ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="blog-item col-12 col-xl-4 col-sm-6 display-none col-lg-show" data-name="">
-                        <a class="blog-item-main" href="blog-detail-two.html">
-                            <div class="bg-img w-100 overflow-hidden mb-minus-1">
-                                <img class="w-100 h-100 display-block" src="assets/images/blog/408x270.png"
-                                    alt="Helping a local business" />
-                            </div>
-                            <div class="infor bg-white p-24">
-                                <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
-                                    Makerting
-                                </div>
-                                <div class="heading6 mt-8">Helping a local business</div>
-                                <div class="date flex-item-center gap-16 mt-8">
-                                    <div class="author caption2 text-secondary">
-                                        by <span class="text-on-surface">Avitex</span>
-                                    </div>
-                                    <div class="item-date flex-item-center">
-                                        <i class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">3 days
-                                            ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
