@@ -50,21 +50,20 @@
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{route('backend.slider')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Slider</span></a>
             </li>
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{route('backend.service')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Layanan</span></a>
             </li>
             <hr class="sidebar-divider my-0">
-
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{route('backend.blog')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Blog</span></a>
             </li>
@@ -286,10 +285,9 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+               @yield('content')
 
-                </div>
+            </div>
                 <!-- /.container-fluid -->
 
             </div>

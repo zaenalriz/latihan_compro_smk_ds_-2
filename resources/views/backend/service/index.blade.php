@@ -1,4 +1,4 @@
 @extends('backend.layouts.master')
 @section('content')
-    blog
+    service
 @endsection
