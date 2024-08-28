@@ -34,6 +34,8 @@ Route::post('/aksi_login',[LoginController::class,'aksi_login'])->name('aksi_log
 
 Route::middleware(['AuthWeb'])->group(function () {
     Route::get('backend/blog',[BackendBlogController::class,'index'])->name('backend.blog');
+    Route::get('backend/blog/tambah',[BackendBlogController::class,'tambah'])->name('backend.blog.tambah');
+
     Route::get('backend/slider',[SliderController::class,'index'])->name('backend.slider');
     Route::get('backend/service',[ServiceController::class,'index'])->name('backend.service');
 });
