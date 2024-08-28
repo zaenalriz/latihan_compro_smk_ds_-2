@@ -30,7 +30,10 @@ Route::get('/blog/detail/{slug}',
 
 // backend
 Route::get('/login',[LoginController::class,'index'])->name('login');
+Route::post('/aksi_login',[LoginController::class,'aksi_login'])->name('aksi_login');
 
-Route::get('backend/blog',[BackendBlogController::class,'index'])->name('backend.blog');
-Route::get('backend/slider',[SliderController::class,'index'])->name('backend.slider');
-Route::get('backend/service',[ServiceController::class,'index'])->name('backend.service');
+Route::middleware(['AuthWeb'])->group(function () {
+    Route::get('backend/blog',[BackendBlogController::class,'index'])->name('backend.blog');
+    Route::get('backend/slider',[SliderController::class,'index'])->name('backend.slider');
+    Route::get('backend/service',[ServiceController::class,'index'])->name('backend.service');
+});
