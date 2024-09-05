@@ -24,8 +24,9 @@
                       <tr>
                           <td>{{$no++}}</td>
                           <td>{{$item->title}}</td>
-                          <td><img src="{{asset($item->file)}}" width="200" alt=""></td>
-                          <td><a href="" class="btn btn-warning">edit</a></td>
+                          <td><img src="{{asset($item->file)}}" width="200" alt="images"></td>
+                          <td><a href="" class="btn btn-warning">edit</a>
+                        </td>
                         </tr>
                     </tbody>
                     @endforeach
@@ -33,5 +34,4 @@
             </div>
         </div>
     </div>
-
 @endsection

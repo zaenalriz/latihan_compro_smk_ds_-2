@@ -22,13 +22,27 @@ class BlogController extends Controller
     }
     public function aksi_tambah(Request $request)
     {
-       Blogs::insert([
+      $this->validate($request,[
+        'title'=>'required',
+        'description'=>'required',
+        'file'=>'required|file|mimes:jpeg,png|max:2048'
+      ]);
+      $data=[
         'title'=>$request->title,
         'slug'=>Str::slug($request->title),
         'description'=>$request->description,
-        'file'=>'',
         'created_by'=>auth()->user()->id
-       ]);
+      ];
+      if($request->hasFile('file')){
+        $file=$request->file('file');
+        // 939393929.png
+        $filename=time().'.'.$file->getClientOriginalExtension();
+        // pindahkan->ke folder public->folder blog
+        $file->move(public_path('blogs'),$filename);
+        $data['file']='blogs/'.$filename;
+    }
+       Blogs::insert($data);
        return redirect()->route('backend.blog');
     }
 }
+   
