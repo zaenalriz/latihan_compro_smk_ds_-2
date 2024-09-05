@@ -36,6 +36,7 @@ Route::middleware(['AuthWeb'])->group(function () {
     Route::get('backend/blog',[BackendBlogController::class,'index'])->name('backend.blog');
     Route::get('backend/blog/tambah',[BackendBlogController::class,'tambah'])->name('backend.blog.tambah');
 Route::post('backend/blog/aksi_tambah',[BackendBlogController::class,'aksi_tambah'])->name('backend.blog.aksi_tambah');
+Route::post('backend/blog/aksi_hapus/{id}',[BackendBlogController::class,'aksi_hapus'])->name('backend.blog.aksi_hapus');
 
     Route::get('backend/slider',[SliderController::class,'index'])->name('backend.slider');
     Route::get('backend/service',[ServiceController::class,'index'])->name('backend.service');

@@ -44,5 +44,16 @@ class BlogController extends Controller
        Blogs::insert($data);
        return redirect()->route('backend.blog');
     }
+    public function aksi_hapus($id){
+      $ambilDataBlog=Blogs::where('id',$id)->first();
+      Blogs::where('id',$id)->delete();
+      $this->hapus_gambar($ambilDataBlog->file);
+      return redirect()->back();
+    }
+    protected function hapus_gambar($gambar){
+      if(file_exists($gambar)){
+        unlink($gambar);
+      }
+    }
 }
    
