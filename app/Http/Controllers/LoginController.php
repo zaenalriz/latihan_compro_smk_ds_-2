@@ -24,7 +24,6 @@ class LoginController extends Controller
             ]
         );
         $credentials = $request->only(['email', 'password']);
-        dd($credentials);
         // mengecek email dan password
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();

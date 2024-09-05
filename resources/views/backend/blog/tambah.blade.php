@@ -3,7 +3,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <h2>Tambah Blog</h2>
-            <form class="user" action="{{ route('aksi_login') }}" method="post">
+            <form class="user" action="{{ route('backend.blog.aksi_tambah') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <input type="text" name="title" class="form-control form-control-user" 
