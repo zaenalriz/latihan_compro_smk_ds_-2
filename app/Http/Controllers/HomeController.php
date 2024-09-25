@@ -11,12 +11,8 @@ class HomeController extends Controller
 {
     public function index(){
         $sliders=Sliders::get();
-        $services=Services::get();
-        $blogs=Blogs::get();
         return view('home',[
             'sliders'=>$sliders,
-            'services'=>$services,
-            'blogs'=>$blogs
         ]);
     }
 }
